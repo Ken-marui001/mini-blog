@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$article-image-size: 150px;
+$article-image-size: 300px;
 $main-color: hsl(300, 59%, 67%);
 
 *{
@@ -29,6 +29,7 @@ a{
   display: flex;
   justify-content: space-between;
   position: fixed;
+  z-index: 100;
   &__logo{
     width: 200px;
     padding: 0 20px;
@@ -59,15 +60,28 @@ a{
 .articles{
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 
-  width: $article-image-size*4;
-  min-height:  $article-image-size*5;
+  width: $article-image-size*3;
+  min-height:  $article-image-size*3;
   margin: 0 auto;
 }
 
 .article{
+  background-color: white;
   height: $article-image-size;
   width: $article-image-size;
+  position: relative;
+  &__image{
+    margin: 5px auto;
+  }
+  &__title{
+    background-color: rgba($color: white, $alpha: 0.5);
+    margin: 5px;
+    padding: 3px;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 @for $i from 1 through 20 {

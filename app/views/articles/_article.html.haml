@@ -1,4 +1,9 @@
-%div.article{class: "card#{article}"}
+-# %div.article{class: "card#{article}"}
+-#   .article__image
+-#   %p.article__title
+-#     =article
+.article{data: {id: "#{article.id}"}}
   .article__image
+    =image_tag article.image.url, size: "290x290"
   %p.article__title
-    =article
+    =article.title

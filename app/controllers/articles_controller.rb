@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @articles = [*1..20]
+    @articles = Article.all.order('created_at DESC').limit(9)
   end
 
   def new

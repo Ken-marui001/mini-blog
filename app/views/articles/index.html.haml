@@ -17,6 +17,7 @@
             Log-in
   .contents
     .articles
-      -@articles.each do |article|
-        =render partial: 'article', locals: {article: article}
+      -# -@articles.each do |article|
+      -#   =render partial: 'article', locals: {article: article}
+      =render @articles
   %footer
