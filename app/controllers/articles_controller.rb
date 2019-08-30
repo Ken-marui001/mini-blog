@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(created_params)
+    redirect_to root_path
   end
 
   private
