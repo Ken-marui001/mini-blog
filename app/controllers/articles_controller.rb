@@ -16,10 +16,27 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    respond_to do |format|{
+    respond_to do |format|
       format.html {render root_path}
       format.json {}
-    }
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    article = Article.find(params[:id])
+    if article.user.id == current_user.id
+      if article.update(created_params)
+        redirect_to edit_article_path(article.id)
+      else
+        render :edit
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   private

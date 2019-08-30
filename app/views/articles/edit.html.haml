@@ -1,0 +1,15 @@
+.wrapper
+  .contents
+    .form
+      = form_for @article do |f|
+        .form__field
+          = f.label :title
+          = f.text_field :title, placeholder: '---Title---'
+        .form__field
+          = f.label :content
+          = f.text_area :content, placeholder: '---content---'
+        .form__field
+          = f.label :image
+          = f.file_field :image
+        .from__field
+          %input.form__action-btn{"data-disable-with": "Save", name: "commit", type: "submit", value: "Save"}

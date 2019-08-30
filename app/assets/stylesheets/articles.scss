@@ -71,6 +71,7 @@ a{
   background-color: white;
   height: $article-image-size;
   width: $article-image-size;
+  cursor: pointer;
   position: relative;
   &__image{
     margin: 5px auto;
