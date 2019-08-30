@@ -18,6 +18,10 @@ a{
   height: 100vh;
 }
 
+.contents{
+  padding-top: 70px;
+}
+
 .header{
   width: 100%;
   background-color: $main-color;
@@ -42,34 +46,14 @@ a{
       color: rgb(82, 82, 82);
       font-size: 20px;
     }
+    &__list{
+      height: 50px;
+      line-height: 50px;
+      padding-left: 20px;
+      font-size: 2rem;
+      vertical-align: bottom;
+    }
   }
-  button{
-    background-color: transparent;
-    border-width: 2px;
-    border-color:rgba(0,0,0,0);
-    color:#999;
-    padding: 0 10px;
-    transition:all 0.3s ease-in-out;
-
-  }
-  button:hover{
-    border-color:rgb(82, 82, 82);;
-    background-color:transparent;
-  }
-}
-
-.post{
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
-  a{
-    color: white;
-  }
-
-}
-
-.contents{
-  padding-top: 70px;
 }
 
 .articles{

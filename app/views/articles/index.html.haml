@@ -3,16 +3,16 @@
     .header__logo
       =link_to root_path do
         MINI-BLOG
-    .header__btns
+    %ul.header__btns
       -if user_signed_in?
-        .post
-          =link_to "" do
-            =fa_icon 'pen'
-        %button.log-out
+        %li.header__btns__list
+          =link_to new_article_path do
+            =fa_icon('pencil-square')
+        %li.header__btns__list
           =link_to destroy_user_session_path, method: :delete do
-            Log-out
+            =fa_icon('sign-out')
       -else
-        %button.log-in
+        %li.header__btns__list
           =link_to user_session_path do
             Log-in
   .contents
