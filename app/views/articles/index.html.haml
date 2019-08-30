@@ -1,7 +1,20 @@
 .wrapper
   %header.header
     .header__logo
+      =link_to root_path do
+        MINI-BLOG
     .header__btns
+      -if user_signed_in?
+        .post
+          =link_to "" do
+            =fa_icon 'pen'
+        %button.log-out
+          =link_to destroy_user_session_path, method: :delete do
+            Log-out
+      -else
+        %button.log-in
+          =link_to user_session_path do
+            Log-in
   .contents
     .articles
       -@articles.each do |article|
