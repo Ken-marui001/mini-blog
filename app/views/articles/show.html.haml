@@ -1,0 +1,10 @@
+.wrapper
+  .contents
+    .article-view
+      .article-view__title
+        %h1
+          = @article.title
+      .article-view__image
+        =image_tag @article.image.url, size: "500x400"
+      .article-view__content
+        =simple_format(@article.content)

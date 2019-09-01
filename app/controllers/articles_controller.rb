@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     respond_to do |format|
-      format.html {render root_path}
+      format.html
       format.json {}
     end
   end
