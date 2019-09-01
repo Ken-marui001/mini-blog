@@ -2,8 +2,11 @@
   = render 'shared/header'
   .contents
     .cover-layer
+    .user-info
+      .user-name
+        #{@user.name}のページ
     .articles
       -# -@articles.each do |article|
       -#   =render partial: 'article', locals: {article: article}
-      =render @articles
+      =render partial: 'articles/article', collection: @articles
   %footer

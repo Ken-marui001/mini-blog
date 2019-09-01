@@ -1,4 +1,5 @@
 $(function(){
+
   function showArticleHTML(article){
     html = `
     <div class="article-view">
@@ -18,7 +19,7 @@ $(function(){
     $('.cover-layer').append(html);
   }
 
-  $(".article").on('click', function(){
+  $(document).on('click', ".article", function(){
     let article_id = $(this).data('id');
     let url = `/articles/${article_id}`;
     console.log(url);
@@ -39,7 +40,7 @@ $(function(){
     });
   });
 
-  $(".cover-layer").on('click', function(){
+  $(document).on('click', ".cover-layer", function(){
     $(this).removeClass('visible');
   });
 });
