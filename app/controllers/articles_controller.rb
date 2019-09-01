@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
     article = Article.find(params[:id])
     if article.user.id == current_user.id
       if article.update(created_params)
-        redirect_to article_path(article.id)
+        redirect_to root_path
       else
         render :edit
       end

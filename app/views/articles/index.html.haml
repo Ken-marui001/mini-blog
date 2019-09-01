@@ -6,4 +6,5 @@
       -# -@articles.each do |article|
       -#   =render partial: 'article', locals: {article: article}
       =render @articles
+    =paginate(@articles)
   %footer
