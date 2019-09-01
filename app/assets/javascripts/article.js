@@ -43,4 +43,16 @@ $(function(){
   $(document).on('click', ".cover-layer", function(){
     $(this).removeClass('visible');
   });
+
+  $(document).on({
+    'mouseenter': function(){
+      let index = $(".article__image").index(this);
+      $($(".article-ope")[index]).css('visibility', 'visible');
+    },
+    'mouseleave': function(){
+      let index = $(".article__image").index(this);
+      $($(".article-ope")[index]).css('visibility', 'hidden');
+    }
+  }, ".article__image");
+
 });

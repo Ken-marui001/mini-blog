@@ -86,8 +86,11 @@ a{
   width: $article-image-size;
   cursor: pointer;
   position: relative;
+  // filter: drop-shadow();
   &__image{
     margin: 5px auto;
+    position: relative;
+    display:flex;
   }
   &__title{
     background-color: rgba($color: white, $alpha: 0.5);
@@ -95,6 +98,21 @@ a{
     padding: 3px;
     position: absolute;
     bottom: 0;
+  }
+}
+
+.article-ope{
+  background-color: rgba($color: gray, $alpha: 0.8);
+  position: absolute;
+  border-radius: 5px;
+  right: 20px;
+  top: 10px;
+  visibility: hidden;
+  a{
+    color: rgba($color: black, $alpha: 0.7);
+  }
+  &__list{
+    padding: 3px;
   }
 }
 
