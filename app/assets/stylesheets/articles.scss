@@ -22,6 +22,19 @@ a{
   padding-top: 70px;
 }
 
+.cover-layer{
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: calc(100vh - 70px);
+  background-color: rgba($color: black, $alpha: 0.4);
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
 .header{
   width: 100%;
   background-color: $main-color;

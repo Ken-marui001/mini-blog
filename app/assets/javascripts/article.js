@@ -1,4 +1,23 @@
 $(function(){
+  function showArticleHTML(article){
+    html = `
+    <div class="article-view">
+    <div class="article-view__title">
+    <h1>
+    ${article.title}
+    </h1>
+    </div>
+    <div class="article-view__image">
+    <img src=${article.image.url}>
+    </div>
+    <div class="article-view__content">
+    ${article.content}
+    </div>
+    </div>`
+
+    $('.cover-layer').append(html);
+  }
+
   $(".article").on('click', function(){
     let article_id = $(this).data('id');
     let url = `/articles/${article_id}`;
@@ -7,13 +26,20 @@ $(function(){
     $.ajax({
       type: 'get',
       url: url,
+      data: {'id': article_id},
       dataType: 'json'
     })
     .done(function(article){
-
+      $(".cover-layer").empty();
+      $(".cover-layer").addClass('visible');
+      showArticleHTML(article);
     })
     .fail(function(){
 
     });
+  });
+
+  $(".cover-layer").on('click', function(){
+    $(this).removeClass('visible');
   });
 });
