@@ -55,4 +55,20 @@ $(function(){
     }
   }, ".article__image");
 
+  $(document).on('click', ".article-ope .check-delete", function(){
+    let article_id = $(this).data('id');
+    let url = `/articles/${article_id}`;
+    console.log(url);
+    result = confirm("投稿を削除しますか?");
+    if(result){
+      $.ajax({
+        url: url,
+        type: 'delete'
+        // data: {'id': article_id}
+      }).fail(function(){
+        alert('server error');
+      });
+    }
+  })
+
 });

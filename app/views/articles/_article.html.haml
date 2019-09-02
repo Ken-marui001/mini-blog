@@ -10,8 +10,7 @@
         %li.article-ope__list
           = link_to edit_article_path(article.id) do
             編集
-        %li.article-ope__list
-          = link_to article_path(article.id), method: :delete do
-            削除
+        %li.article-ope__list.check-delete{data: {id: "#{article.id}"}}
+          削除
   %p.article__title
     =article.title

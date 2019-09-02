@@ -39,6 +39,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    # binding.pry
+    article = Article.find(params[:id])
+    article.destroy if article.user_id == current_user.id
+  end
+
   private
   def created_params
     return params.require(:article).permit(:title, :content, :image).merge(user_id: current_user.id)
